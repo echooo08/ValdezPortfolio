@@ -282,7 +282,11 @@ span {
 
 .portfolio {
     background: var(--snd-bg-color);
+    padding-top: 10rem;
+    padding-bottom: 4rem;
 }
+    
+
 
 .portfolio h2 {
     margin-bottom: 4rem;
@@ -290,10 +294,12 @@ span {
 
 .portfolio-container {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 380px);
+    justify-content: center; /* horizontal center */
     align-items: center;
     gap: 2.5rem;
     padding-bottom: 4rem;
+    min-height: 70vh; /* vertical center */
 }
 
 .portfolio-container .portfolio-box {
@@ -302,6 +308,7 @@ span {
     box-shadow: 0 0 1rem var(--bg-color);
     overflow: hidden;
     display: flex;
+    height: 240px;
 }
 
 .portfolio-box img {
@@ -326,7 +333,7 @@ span {
     align-items: center;
     flex-direction: column;
     text-align: center;
-    padding: 0 4rem;
+     padding: 2rem;
     transform: translateY(100%);
     transition: 0.5s ease;
 }
@@ -691,4 +698,23 @@ span {
     .timeline-dot {
         left: 10px;
     }
+}
+
+.theme-toggle {
+    position: fixed;
+    right: 30px;
+    bottom: 120px; /* katabi ng contact area */
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.theme-toggle i {
+    font-size: 3.5rem; /* laki ng icon */
+    color: var(--main-color);
+    transition: 0.3s ease;
+}
+
+.theme-toggle i:hover {
+    transform: scale(1.2);
+    text-shadow: 0 0 10px var(--main-color);
 }
