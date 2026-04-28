@@ -88,6 +88,28 @@ section {
     font-weight: 700;
 }
 
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.theme-toggle {
+    margin-left: 2rem; /* space after Contact */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.theme-toggle i {
+    font-size: 2.5rem;
+    color: var(--main-color);
+    transition: 0.3s ease;
+}
+
+.theme-toggle i:hover {
+    transform: scale(1.2);
+}
+
 .navbar a:hover,
 .navbar a:active {
     color: var(--main-color);
@@ -313,8 +335,11 @@ span {
 
 .portfolio-box img {
     width: 100%;
+    height: 100%;
+    object-fit: cover; /* para hindi distorted */
+    opacity: 1;        /* tanggal blur effect */
+    image-rendering: auto;
     transition: 0.5s ease;
-    opacity: 0.7;
 }
 
 .portfolio-box:hover img {
@@ -700,21 +725,94 @@ span {
     }
 }
 
-.theme-toggle {
-    position: fixed;
-    right: 30px;
-    bottom: 120px; /* katabi ng contact area */
-    z-index: 1000;
-    cursor: pointer;
+
+
+.contact-container {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-.theme-toggle i {
-    font-size: 3.5rem; /* laki ng icon */
+.contact-info {
+    flex: 1;
+    min-width: 280px;
+}
+
+.contact-info h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    margin: 1rem 0;
+    font-size: 1.6rem;
+}
+
+.contact-info i {
+    margin-right: 10px;
     color: var(--main-color);
-    transition: 0.3s ease;
 }
 
-.theme-toggle i:hover {
-    transform: scale(1.2);
-    text-shadow: 0 0 10px var(--main-color);
+.contact-info {
+    flex: 1;
+    min-width: 280px;
+    color: var(--text-color);
+}
+
+.contact-info h3 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.contact-desc {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    opacity: 0.8;
+     text-align: justify;
+}
+
+/* Contact items */
+.contact-info p {
+    font-size: 1.6rem;
+    margin: 1.2rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* spacing ng icon at text */
+}
+
+.contact-info p i {
+    min-width: 20px; /* 🔥 para pantay lahat ng text alignment */
+    text-align: center;
+}
+
+.contact-info i {
+    margin-right: 12px;
+    color: var(--main-color);
+    font-size: 1.8rem;
+}
+
+
+.contact-info p {
+    margin: 1.2rem 0;
+}
+
+.contact-info p:nth-of-type(2) {
+    margin-top: 3rem; /* push pababa lahat ng contact info */
+}
+
+/* Contact Social Media Vertical */
+.contact .social-media {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* optional: center alignment */
+.contact .social-media a {
+    margin: 0;
 }

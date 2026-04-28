@@ -35,12 +35,12 @@ window.onscroll = () => {
 // Typing Text code
 
 const typed = new Typed('.multiple-text', {
-    strings: ['Web Developer', 'Frontend Developer', 'Backend Developer', 'Content Creator', 'Photographer'],
+    strings: ['student aspiring to become a web developer.'],
     typeSpeed: 60,
     backSpeed: 60,
-    backDelay: 1000,
+    backDelay: 1500,
     loop: true,
-  });
+});
 
 //   ScrollReveal Code
 
@@ -66,33 +66,21 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 const toggleBtn = document.getElementById("theme-toggle");
+const icon = document.getElementById("theme-icon");
 
-if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark-mode");
-    toggleBtn.innerHTML = '<i class="bx bx-sun"></i>';
-}
+// Default = DARK MODE
+document.body.classList.add("dark-mode");
+icon.classList.replace("bx-moon", "bx-sun");
+localStorage.setItem("theme", "dark");
 
 toggleBtn.onclick = () => {
     document.body.classList.toggle("dark-mode");
 
     if (document.body.classList.contains("dark-mode")) {
-        localStorage.setItem("theme", "dark");
-        toggleBtn.innerHTML = '<i class="bx bx-sun"></i>';
-    } else {
-        localStorage.setItem("theme", "light");
-        toggleBtn.innerHTML = '<i class="bx bx-moon"></i>';
-    }
-};
-
-const toggle = document.getElementById("theme-toggle");
-const icon = document.getElementById("theme-icon");
-
-toggle.onclick = () => {
-    document.body.classList.toggle("dark-mode");
-
-    if (document.body.classList.contains("dark-mode")) {
         icon.classList.replace("bx-moon", "bx-sun");
+        localStorage.setItem("theme", "dark");
     } else {
         icon.classList.replace("bx-sun", "bx-moon");
+        localStorage.setItem("theme", "light");
     }
 };
